@@ -103,13 +103,21 @@ Client Audit Results View
 ```
 
 The `client/` layer will provide the user interface for viewing accessibility findings.
-
 The `server/` layer will provide the API and server-side logic required to serve audit data.
-
 The `tests/` layer will contain tests for the feature.
 
-
 The feature will be implemented with accessibility in mind, including keyboard navigation, visible focus states, semantic HTML, and appropriate accessible names.
+
+## Current Status
+
+- Lighthouse accessibility audit completed for `india.gov.in`.
+- Lighthouse accessibility score: 89.
+- Four automated accessibility findings documented.
+- Ten additional Lighthouse manual checks were reported but were not individually documented because their details were not captured.
+- Keyboard-only navigation pass completed.
+- Five findings documented, including one repository architecture finding.
+- Monorepo-style project skeleton created.
+- Audit report, CSV, and screenshots added to the repository.
 
 
 
