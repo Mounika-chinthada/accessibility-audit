@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enterprise dashboard overview">
+  <title>Dashboard Overview</title>
+</head>
+
+<body>
+  <header>
+    <h1>Dashboard Overview</h1>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="users.html">Users</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <aside aria-label="Dashboard sidebar">
+    <h2>Dashboard Navigation</h2>
+
+    <nav aria-label="Dashboard navigation">
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#activity">Activity</a></li>
+        <li><a href="#reports">Reports</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="summary" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Summary</h2>
+
+      <article>
+        <h3>Total Users</h3>
+        <p>1,248</p>
+      </article>
+
+      <article>
+        <h3>Active Users</h3>
+        <p>986</p>
+      </article>
+
+      <article>
+        <h3>Pending Requests</h3>
+        <p>42</p>
+      </article>
+    </section>
+
+    <section id="activity" aria-labelledby="activity-heading">
+      <h2 id="activity-heading">Recent Activity</h2>
+
+      <table>
+        <caption>Recent user activity</caption>
+        <thead>
+          <tr>
+            <th scope="col">User</th>
+            <th scope="col">Action</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Ananya Rao</td>
+            <td>Updated profile</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>Rahul Kumar</td>
+            <td>Generated report</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>Priya Sharma</td>
+            <td>Requested access</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="reports" aria-labelledby="reports-heading">
+      <h2 id="reports-heading">Reports</h2>
+
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Generate a report</legend>
+
+          <p>
+            <label for="report-type">Report type</label>
+            <select id="report-type" name="report-type" required>
+              <option value="">Select a report</option>
+              <option value="users">User Report</option>
+              <option value="activity">Activity Report</option>
+              <option value="accessibility">Accessibility Report</option>
+            </select>
+          </p>
+
+          <button type="submit">Generate Report</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="actions-heading">
+      <h2 id="actions-heading">User Actions</h2>
+
+      <button
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="user-dialog"
+      >
+        View User Details
+      </button>
+
+      <dialog id="user-dialog" aria-labelledby="dialog-heading">
+        <h2 id="dialog-heading">User Details</h2>
+
+        <p>User details can be displayed in this dialog.</p>
+
+        <form method="dialog">
+          <button type="submit">Close</button>
+        </form>
+      </dialog>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Enterprise Dashboard.</p>
+  </footer>
+</body>
+</html>
