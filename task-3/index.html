@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible enterprise dashboard">
+  <title>Enterprise Dashboard</title>
+</head>
+
+<body>
+  <header>
+    <h1>Enterprise Dashboard</h1>
+
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Dashboard</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <aside aria-label="Sidebar">
+    <h2>Quick Navigation</h2>
+
+    <nav aria-label="Sidebar navigation">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#users">User Activity</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Dashboard Overview</h2>
+
+      <article>
+        <h3>Total Users</h3>
+        <p>1,248</p>
+      </article>
+
+      <article>
+        <h3>Active Users</h3>
+        <p>986</p>
+      </article>
+
+      <article>
+        <h3>Pending Requests</h3>
+        <p>42</p>
+      </article>
+    </section>
+
+    <section id="users" aria-labelledby="users-heading">
+      <h2 id="users-heading">Recent User Activity</h2>
+
+      <table>
+        <caption>Recent user activity</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Ananya Rao</td>
+            <td>ananya@example.com</td>
+            <td>Administrator</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Rahul Kumar</td>
+            <td>rahul@example.com</td>
+            <td>Editor</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Priya Sharma</td>
+            <td>priya@example.com</td>
+            <td>Viewer</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="reports" aria-labelledby="reports-heading">
+      <h2 id="reports-heading">Generate Report</h2>
+
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Report Details</legend>
+
+          <p>
+            <label for="report-type">Report type</label>
+            <select id="report-type" name="report-type" required>
+              <option value="">Select a report</option>
+              <option value="users">User Report</option>
+              <option value="activity">Activity Report</option>
+              <option value="accessibility">Accessibility Report</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="report-email">Email address</label>
+            <input
+              type="email"
+              id="report-email"
+              name="report-email"
+              autocomplete="email"
+              required
+              aria-describedby="email-help"
+            >
+          </p>
+
+          <p id="email-help">
+            The report will be sent to this email address.
+          </p>
+
+          <p>
+            <button type="submit">Generate Report</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="settings" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Settings</h2>
+
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Notification Preferences</legend>
+
+          <p>
+            <input
+              type="checkbox"
+              id="email-notifications"
+              name="email-notifications"
+              checked
+            >
+            <label for="email-notifications">
+              Receive email notifications
+            </label>
+          </p>
+
+          <p>
+            <input
+              type="checkbox"
+              id="security-alerts"
+              name="security-alerts"
+              checked
+            >
+            <label for="security-alerts">
+              Receive security alerts
+            </label>
+          </p>
+
+          <button type="submit">Save Preferences</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section aria-labelledby="modal-heading">
+      <h2 id="modal-heading">User Actions</h2>
+
+      <button
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="user-dialog"
+      >
+        View User Details
+      </button>
+
+      <dialog id="user-dialog" aria-labelledby="dialog-title">
+        <h2 id="dialog-title">User Details</h2>
+
+        <p>Additional user information can be displayed here.</p>
+
+        <form method="dialog">
+          <button type="submit">Close</button>
+        </form>
+      </dialog>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Enterprise Dashboard. All rights reserved.</p>
+  </footer>
+</body>
+</html>
