@@ -1,0 +1,241 @@
+/* ========================================
+   TASK 4: RESPONSIVE DESIGN SYSTEM
+   ======================================== */
+
+/* 1. Design tokens */
+:root {
+  color-scheme: light;
+
+  --color-primary: #4f46e5;
+  --color-primary-hover: #3730a3;
+  --color-background: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-text: #172033;
+  --color-muted: #475569;
+  --color-border: #dbe2ea;
+  --color-success: #166534;
+
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.75rem;
+  --font-heading: 2rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  --shadow-card: 0 4px 18px rgba(15, 23, 42, 0.08);
+  --transition-fast: 180ms ease;
+}
+
+/* 2. Dark theme variables */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-text: #f8fafc;
+  --color-muted: #cbd5e1;
+  --color-border: #475569;
+  --color-primary: #a5b4fc;
+  --color-primary-hover: #c7d2fe;
+  --color-success: #86efac;
+
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* 3. Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+button,
+input,
+select {
+  max-width: 100%;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 4. Header and navigation */
+header {
+  padding: var(--space-6);
+  color: #ffffff;
+  background: #312e81;
+}
+
+header h1 {
+  margin-top: 0;
+  font-size: var(--font-heading);
+}
+
+header nav ul,
+aside nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  list-style: none;
+}
+
+header nav a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* 5. Mobile-first page layout */
+body > aside {
+  margin: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+body > main {
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-4);
+}
+
+main section {
+  min-width: 0;
+  margin-bottom: var(--space-8);
+}
+
+main section > h2 {
+  font-size: var(--font-xl);
+}
+
+/* 6. Dashboard cards */
+#overview,
+#summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+#overview article,
+#summary article {
+  min-width: 0;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+#overview article:hover,
+#summary article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+#overview article h3,
+#summary article h3 {
+  margin-top: 0;
+  font-size: var(--font-lg);
+}
+
+#overview article p,
+#summary article p {
+  margin-bottom: 0;
+  font-size: var(--font-heading);
+  font-weight: 700;
+}
+
+/* 7. Glass-style panels */
+main section,
+body > aside {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 8. Responsive tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+
+caption {
+  padding: var(--space-3);
+  font-weight: 700;
+  text-align: left;
+}
+
+th,
+td {
+  padding: var(--space-3);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+ 
